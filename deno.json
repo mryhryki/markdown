@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --watch src/index.ts",
+    "check": "deno lint ./src/ && deno fmt --check && deno check src/index.ts && deno test"
+  },
+  "imports": {
+    "assert": "https://deno.land/std@0.211.0/assert/mod.ts"
+  }
+}
