@@ -1,6 +1,8 @@
 {
   "tasks": {
-    "dev": "deno run --watch src/index.ts",
-    "test": "deno test"
+    "dev": "deno run --watch src/index.ts"
+  },
+  "imports": {
+    "assert": "https://deno.land/std@0.211.0/assert/mod.ts"
   }
 }
