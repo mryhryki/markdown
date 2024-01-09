@@ -11,9 +11,6 @@ $ deno task dev
 # Check
 $ deno task check
 
-# Run test
-$ deno task test
-
 # Run Formatter
 $ deno fmt ./src/
 ```
