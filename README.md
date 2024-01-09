@@ -8,17 +8,14 @@ This is my experimental markdown parser/generator.
 # Watch mode
 $ deno task dev
 
+# Check
+$ deno task check
+
 # Run test
-$ deno test
+$ deno task test
 
-# Format
-$ deno fmt
-
-# Lint
-$ deno lint
-
-# Type-check
-$ deno check src/index.ts
+# Run Formatter
+$ deno fmt ./src/
 ```
 
 ## References
