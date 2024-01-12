@@ -3,15 +3,15 @@ import { convert } from "../index.ts";
 
 Deno.test("Unordered-List test", async (t) => {
   const markdown = [
-    "- Element1", //
-    "- Element2",
-    "- Element3",
+    "- Item1", //
+    "- Item2",
+    "- Item3",
   ].join("\n");
   const html = [
     "<ul>", //
-    "<li>Line1</li>",
-    "<li>Line2</li>",
-    "<li>Line3</li>",
+    "<li>Item1</li>",
+    "<li>Item2</li>",
+    "<li>Item3</li>",
     "</ul>",
   ].join("");
   assertEquals(convert(markdown), html);

@@ -15,6 +15,8 @@ function toHtml(node: Readonly<NodeType>, isNested: boolean): string {
       return `<${node.type}>${
         node.children.map((child) => toHtml(child, true)).join("")
       }</${node.type}>`;
+    case "unordered-list-item":
+      return `<li>${node.children.map((child) => toHtml(child, true)).join("")}</li>`
     case "text": {
       if (isNested) {
         return node.text.trim();

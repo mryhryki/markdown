@@ -13,8 +13,10 @@ export function generateNodes(
 }
 
 const HeadingPattern = new RegExp("^#{1,6}[ \t]+");
+const UnorderedListItemPattern = new RegExp("^([-*][ \t]+)");
 
 function getNodes(line: SplitLineType): NodeType[] {
+  // Heading
   if (line.indent === "") {
     const headingMarker = line.text.match(HeadingPattern)?.[0];
     if (headingMarker != null) {
@@ -36,6 +38,28 @@ function getNodes(line: SplitLineType): NodeType[] {
         },
       ];
     }
+  }
+
+  // Unordered list item
+  const unorderedListItemMatch = line.text.match(UnorderedListItemPattern);
+  if (unorderedListItemMatch != null) {
+    const [marker] = unorderedListItemMatch
+    return [
+      {
+        position: line.position,
+        row: line.row,
+        col: line.col,
+        type: "unordered-list-item",
+        text: `${line.indent}${marker}`,
+        children: getNodes({
+          position: line.position + line.indent.length + marker.length,
+          row: line.row,
+          col: line.col + line.indent.length + marker.length,
+          indent: "",
+          text: line.text.substring(line.indent.length + marker.length),
+        }),
+      },
+    ];
   }
 
   return [
