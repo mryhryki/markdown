@@ -6,7 +6,7 @@ Deno.test("Paragraph test", async (t) => {
     "Line1", //
     "Line2",
     "Line3",
-    ].join("\n");
+  ].join("\n");
   const html = [
     "<p>Line1</p>", //
     "<p>Line2</p>",

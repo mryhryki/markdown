@@ -43,7 +43,7 @@ function getNodes(line: SplitLineType): NodeType[] {
   // Unordered list item
   const unorderedListItemMatch = line.text.match(UnorderedListItemPattern);
   if (unorderedListItemMatch != null) {
-    const [marker] = unorderedListItemMatch
+    const [marker] = unorderedListItemMatch;
     return [
       {
         position: line.position,
