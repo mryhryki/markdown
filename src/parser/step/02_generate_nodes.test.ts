@@ -18,6 +18,13 @@ Deno.test("generateNodes()", () => {
       indent: "",
       text: "Line2\r\n",
     },
+    {
+      position: 15,
+      row: 2,
+      col: 0,
+      indent: "",
+      text: "- Item\n",
+    },
   ];
   const results = generateNodes(lines);
 
@@ -46,6 +53,23 @@ Deno.test("generateNodes()", () => {
       type: "text",
       text: "Line2\r\n",
       children: [],
+    },
+    {
+      position: 15,
+      row: 2,
+      col: 0,
+      type: "unordered-list-item",
+      text: "- ",
+      children: [
+        {
+          position: 17,
+          row: 2,
+          col: 2,
+          type: "text",
+          text: "Item\n",
+          children: [],
+        },
+      ],
     },
   ];
   assertEquals(results, expectValues);
