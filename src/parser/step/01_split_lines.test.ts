@@ -2,7 +2,7 @@ import { assertEquals } from "assert";
 import { SplitLineType } from "../types.ts";
 import { splitLines } from "./01_split_lines.ts";
 
-Deno.test("splitLines()", async () => {
+Deno.test("splitLines()", () => {
   const markdown = [
     "# Line1", //
     "Line2\r", //

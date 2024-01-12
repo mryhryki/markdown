@@ -1,13 +1,21 @@
 import { SplitLineType } from "../types.ts";
 
-export function splitLines(markdown: Readonly<string>): Readonly<SplitLineType[]> {
+export function splitLines(
+  markdown: Readonly<string>,
+): Readonly<SplitLineType[]> {
   const generator = new Generator();
 
   let row = 0;
   let startOfRowPosition = 0;
 
   markdown.split("").forEach((char, position) => {
-    const data: SplitLineType = { position, row, col: position - startOfRowPosition, text: char, indent: "" };
+    const data: SplitLineType = {
+      position,
+      row,
+      col: position - startOfRowPosition,
+      text: char,
+      indent: "",
+    };
     switch (char) {
       case "\n": {
         row++;

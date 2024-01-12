@@ -4,7 +4,7 @@ export function generate(ast: Readonly<NodeType[]>): string {
   return ast.map(toHtml).join("");
 }
 
-function toHtml (node: Readonly<NodeType>): string {
+function toHtml(node: Readonly<NodeType>): string {
   switch (node.type) {
     case "h1":
     case "h2":
@@ -12,7 +12,9 @@ function toHtml (node: Readonly<NodeType>): string {
     case "h4":
     case "h5":
     case "h6":
-      return `<${node.type}>${node.children.map(toHtml).join("")}</${node.type}>`;
+      return `<${node.type}>${
+        node.children.map(toHtml).join("")
+      }</${node.type}>`;
     case "text":
       return node.text;
   }

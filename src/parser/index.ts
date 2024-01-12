@@ -4,5 +4,5 @@ import { buildAst } from "./step/03_build_ast.ts";
 import { NodeType } from "./types.ts";
 
 export function parse(markdown: Readonly<string>): Readonly<NodeType[]> {
-  return buildAst(generateNodes(splitLines(markdown)))
+  return buildAst(generateNodes(splitLines(markdown)));
 }

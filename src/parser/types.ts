@@ -9,7 +9,7 @@ export interface SplitLineType extends PositionBase {
   text: string;
 }
 
-export type HeadingType = `h${1 | 2 | 3 | 4 | 5 | 6}`
+export type HeadingType = `h${1 | 2 | 3 | 4 | 5 | 6}`;
 export type NodeEnumType = HeadingType | "text";
 
 export interface NodeType extends PositionBase {

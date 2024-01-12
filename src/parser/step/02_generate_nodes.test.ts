@@ -2,7 +2,7 @@ import { assertEquals } from "assert";
 import { NodeType, SplitLineType } from "../types.ts";
 import { generateNodes } from "./02_generate_nodes.ts";
 
-Deno.test("generateNodes()", async () => {
+Deno.test("generateNodes()", () => {
   const lines: SplitLineType[] = [
     {
       position: 0,

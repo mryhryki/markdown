@@ -17,10 +17,9 @@ Deno.test("parse()", async (t) => {
 
 function returnToText(nodes: Readonly<NodeType[]>): string {
   const texts: string[] = [];
-  nodes.forEach(({text, children}) => {
+  nodes.forEach(({ text, children }) => {
     texts.push(text);
     texts.push(returnToText(children));
-  })
+  });
   return texts.join("");
 }
-

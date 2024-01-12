@@ -1,6 +1,8 @@
 import { HeadingType, NodeType, SplitLineType } from "../types.ts";
 
-export function generateNodes(lines: Readonly<SplitLineType[]>): Readonly<NodeType[]> {
+export function generateNodes(
+  lines: Readonly<SplitLineType[]>,
+): Readonly<NodeType[]> {
   const results: NodeType[] = [];
   for (const line of lines) {
     getNodes(line).forEach((node) => {
