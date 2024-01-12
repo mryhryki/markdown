@@ -1,6 +1,6 @@
 import { SplitLineType } from "../types.ts";
 
-export function splitLines(markdown: string): Readonly<SplitLineType[]> {
+export function splitLines(markdown: Readonly<string>): Readonly<SplitLineType[]> {
   const generator = new Generator();
 
   let row = 0;
