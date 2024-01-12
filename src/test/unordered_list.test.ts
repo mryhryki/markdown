@@ -1,7 +1,7 @@
 import { assertEquals } from "assert";
 import { convert } from "../index.ts";
 
-Deno.test("Unordered-List test", async (t) => {
+Deno.test("Unordered-List test", () => {
   const markdown = [
     "- Item1", //
     "- Item2",

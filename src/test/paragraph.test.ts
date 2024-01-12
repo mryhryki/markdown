@@ -1,7 +1,7 @@
 import { assertEquals } from "assert";
 import { convert } from "../index.ts";
 
-Deno.test("Paragraph test", async (t) => {
+Deno.test("Paragraph test", () => {
   const markdown = [
     "Line1", //
     "Line2",
