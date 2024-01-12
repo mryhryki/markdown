@@ -1,3 +1,10 @@
+export type LexerAnalyzedType = {
+  position: number;
+  row: number;
+  col: number;
+  text: string;
+}
+
 export function analyze(markdown: string): Readonly<LexerAnalyzedType[]> {
   const results: LexerAnalyzedType[] = [];
   const generator = new Generator();
@@ -72,11 +79,4 @@ class Generator {
   get results(): Readonly<LexerAnalyzedType[]> {
     return this.#results;
   }
-}
-
-export type LexerAnalyzedType = {
-  position: number;
-  row: number;
-  col: number;
-  text: string;
 }
