@@ -1,6 +1,6 @@
 # markdown
 
-This is my experimental markdown parser/generator.
+This is my experimental Markdown parser/generator.
 
 ## Development
 
