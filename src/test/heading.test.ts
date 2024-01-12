@@ -52,8 +52,7 @@ Deno.test("Heading test", async (t) => {
 
   await t.step("# x7 is not heading", () => {
     const markdown = "####### Not a title";
-    // TODO: expected paragraph (<p>)
-    const html = "####### Not a title";
+    const html = "<p>####### Not a title</p>";
     assertEquals(convert(markdown), html);
   });
 });
