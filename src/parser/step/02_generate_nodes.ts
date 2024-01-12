@@ -15,7 +15,6 @@ const HeadingPattern = new RegExp("^#{1,6}[ \t]+");
 function getNodes(line: SplitLineType): NodeType[] {
   if (line.indent === "") {
     const headingMarker = line.text.match(HeadingPattern)?.[0];
-    console.debug("headingMarker:", headingMarker, line.text);
     if (headingMarker != null) {
       const type = `h${headingMarker.trim().length}` as HeadingType;
       return [
