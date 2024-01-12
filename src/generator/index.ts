@@ -17,9 +17,9 @@ function toHtml(node: Readonly<NodeType>, isNested: boolean): string {
       }</${node.type}>`;
     case "text": {
       if (isNested) {
-        return node.text;
+        return node.text.trim();
       }
-      return `<p>${node.text}</p>`;
+      return `<p>${node.text.trim()}</p>`;
     }
   }
 }
