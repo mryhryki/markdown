@@ -35,12 +35,19 @@ export function analyze(markdown: string): Readonly<LexerAnalyzedType[]> {
 const NoData = -1;
 
 class Generator {
+  #results: LexerAnalyzedType[] = [];
+
   #position: number = NoData;
   #row: number = NoData;
   #col: number = NoData;
-  #buf: string[] = [];
+  #buffer: string[] = [];
 
-  #results: LexerAnalyzedType[] = [];
+  #reset(): void {
+    this.#position = NoData;
+    this.#row = NoData;
+    this.#col = NoData;
+    this.#buffer = [];
+  }
 
   append(data: LexerAnalyzedType): void {
     if (this.#position === NoData) {
@@ -48,21 +55,18 @@ class Generator {
       this.#row = data.row;
       this.#col = data.col;
     }
-    this.#buf.push(data.text);
+    this.#buffer.push(data.text);
   }
 
   flush(): void {
-    if (this.#buf.length === 0) return;
+    if (this.#buffer.length === 0) return;
     this.#results.push({
       position: this.#position,
       row: this.#row,
       col: this.#col,
-      text: this.#buf.join(""),
+      text: this.#buffer.join(""),
     });
-    this.#position = NoData;
-    this.#row = NoData;
-    this.#col = NoData;
-    this.#buf = [];
+    this.#reset();
   }
 
   get results(): Readonly<LexerAnalyzedType[]> {
